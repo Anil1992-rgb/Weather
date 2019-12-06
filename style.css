@@ -1,0 +1,65 @@
+#title {
+    margin-bottom: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+#searchCard {
+    float: left;
+    background-color: rgb(240, 240, 240);
+    padding-bottom: 10px;
+}
+
+#bigCard {
+    height: 300px;
+    float: right;
+}
+
+label {
+    font-weight: bold;
+    font-size: large;
+    padding-top: 10px;
+}
+
+.btn-primary {
+    position: absolute;
+    top: 40px;
+}
+
+.col-lg-9 {
+    float: right;
+}
+
+#forecastCard {
+    border: none;
+}
+
+.card-deck {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.frcstTemp {
+    margin: 5px 0px;
+}
+
+#cityName {
+    display: inline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.list-group-item {
+    text-align: left;
+}
