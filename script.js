@@ -1,21 +1,28 @@
 $(".btn-primary").on("click", function(event) {
     event.preventDefault();
+    var cityInput = $("#searchTerms").val();
 
-    callWeatherApi();
+    callWeatherApi(cityInput, true);
 
 });
+
+$(document).on("click", ".town", function() {
+    var townName = $(this).text()
+    callWeatherApi(townName, false)
+})
 
 $("#searchTerms").keypress(function(event) {
     var key = event.which;
     if (key == 13) {
-        callWeatherApi();
+        var cityInput = $("#searchTerms").val();
+
+        callWeatherApi(cityInput, true);
     }
 });
 
 
-var callWeatherApi = function() {
+var callWeatherApi = function(cityInput, addToList) {
 
-    var cityInput = $("#searchTerms").val();
     var APIKey = "bc391d3502ace61ff5678254a2a56546";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=" + cityInput + "&appid=" + APIKey;
     var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?units=imperial&q=" + cityInput + "&appid=" + APIKey;
@@ -37,9 +44,11 @@ var callWeatherApi = function() {
         $("#uv-index").text("UV Index: ");
     });
 
-    var li = $("<button class='list-group-item'>");
-    $("ul").append(li);
-    li.text(cityInput);
+    if (addToList === true) {
+        var li = $("<button class='list-group-item town'>");
+        $("ul").append(li);
+        li.text(cityInput);
+    }
 
     $.ajax({
             url: fiveDayURL,
