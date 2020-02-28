@@ -26,6 +26,8 @@ Credits
 -----------------------------------------------------------------
 
 
-*This project is licensed under the terms of the MIT license.
+![Example profile](./example.png)
+
+
 
 
